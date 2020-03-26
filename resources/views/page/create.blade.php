@@ -12,13 +12,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="nama">Nama Siswa</label>
-                    <input name="nama" type="text" id="nama" class="form-control" />
+                    <label for="nama_siswa">Nama Siswa</label>
+                    <input name="nama_siswa" type="text" id="nama" class="form-control" />
                 </div>
 
                 <div class="form-group">
-                    <label for="tanggal_lahir">Tanggal Lahir</label>
-                    <input name="tanggal_lahir" type="date" id="tanggal_lahir" class="form-control" />
+                    <label for="tgl_lahir">Tanggal Lahir</label>
+                    <input name="tgl_lahir" type="date" id="tgl_lahir" class="form-control" />
                 </div>
 
                 <fieldset class="form-group">
@@ -42,7 +42,7 @@
                 </fieldset>
 
                 <div class="form-group">
-                    <input type="submit" class="btn btn-infog">
+                    <input type="submit" class="btn btn-success">
                 </div>
             </form>
         </div>
