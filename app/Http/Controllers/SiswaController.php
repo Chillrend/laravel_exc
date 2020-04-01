@@ -30,6 +30,12 @@ class SiswaController extends Controller
         return redirect('/siswa');
     }
 
+    public function delete($id){
+        Siswa::find($id)->delete();
+
+        return redirect('/siswa');
+    }
+
     public function siswa(){
         $halaman = "siswa";
         $siswa = [

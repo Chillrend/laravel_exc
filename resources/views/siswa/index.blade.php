@@ -22,7 +22,10 @@
                             <td>{{$s -> nama_siswa}}</td>
                             <td>{{$s -> tgl_lahir}}</td>
                             <td>{{$s -> jenis_kelamin}}</td>
-                            <td><a href="/siswa/{{$s->id}}" class="btn btn-info">Detail</a></td>
+                            <td>
+                                <a href="/siswa/{{$s->id}}" class="btn btn-info">Detail</a>
+                                <a href="/siswa/delete/{{$s->id}}" class="btn btn-danger">Delete</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
