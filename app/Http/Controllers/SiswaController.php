@@ -30,6 +30,19 @@ class SiswaController extends Controller
         return redirect('/siswa');
     }
 
+    public function edit_views($id){
+        $siswa = Siswa::find($id);
+        return view('siswa.edit', ['siswa' => $siswa]);
+    }
+
+    public function doEdit($id, Request $request){
+        $siswa = Siswa::find($id);
+        $siswa -> fill($request->post());
+        $siswa -> save();
+
+        return redirect('/siswa');
+    }
+
     public function delete($id){
         Siswa::find($id)->delete();
 

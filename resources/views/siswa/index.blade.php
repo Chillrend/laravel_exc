@@ -24,7 +24,8 @@
                             <td>{{$s -> jenis_kelamin}}</td>
                             <td>
                                 <a href="/siswa/{{$s->id}}" class="btn btn-info">Detail</a>
-                                <a href="/siswa/delete/{{$s->id}}" class="btn btn-danger">Delete</a>
+                                <a href="/siswa/delete/{{$s->id}}" onclick="return confirm('Yakin Bro?')" class="btn btn-danger">Delete</a>
+                                <a href="/siswa/edit/{{ $s -> id }}" class="btn btn-warning">Edit</a>
                             </td>
                         </tr>
                     @endforeach

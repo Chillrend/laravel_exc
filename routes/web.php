@@ -30,6 +30,7 @@ Route::get('/siswa/{id}', 'SiswaController@show');
 
 Route::post('/siswa', 'SiswaController@store');
 
-Route::get('/siswa/edit/{id}', 'SiswaController@edit_views')
-Route::post('/siswa/delete/{id}', 'SiswaController@delete')
+Route::get('/siswa/edit/{id}', 'SiswaController@edit_views');
+Route::post('/siswa/edit/do/{id}', 'SiswaController@doEdit');
+Route::get('/siswa/delete/{id}', 'SiswaController@delete');
 
