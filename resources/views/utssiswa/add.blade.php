@@ -4,21 +4,21 @@
     <div id="siswa">
         <h2>Tambah siswa</h2>
         <div class="col-lg-8">
-            <form action="{{url("siswa")}}" method="POST">
+            <form action="{{url("uts_siswa")}}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="nisn">NISN</label>
-                    <input name="nisn" type="number" id="nisn" class="form-control" />
+                    <label for="nim">NIM</label>
+                    <input name="nim" type="number" id="nim" class="form-control" required/>
                 </div>
 
                 <div class="form-group">
-                    <label for="nama_siswa">Nama Siswa</label>
-                    <input name="nama_siswa" type="text" id="nama" class="form-control" />
+                    <label for="nama">Nama Siswa</label>
+                    <input name="nama" type="text" id="nama" class="form-control" required/>
                 </div>
 
                 <div class="form-group">
-                    <label for="tgl_lahir">Tanggal Lahir</label>
-                    <input name="tgl_lahir" type="date" id="tgl_lahir" class="form-control" />
+                    <label for="alamat">Alamat</label>
+                    <textarea name="alamat" id="alamat" class="form-control" required ></textarea>
                 </div>
 
                 <fieldset class="form-group">
@@ -40,6 +40,26 @@
                         </div>
                     </div>
                 </fieldset>
+
+                <div class="form-group">
+                    <label for="prodi">Program Studi</label>
+                    <input type="text" name="prodi" id="prodi" class="form-control" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="jurusan">Jurusan</label>
+                    <input type="text" name="jurusan" id="jurusan" class="form-control" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="kelas">Kelas</label>
+                    <input type="text" name="kelas" id="kelas" class="form-control" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="angkatan">Angkatan</label>
+                    <input type="number" maxlength="4" name="angkatan" id="angkatan" class="form-control" required/>
+                </div>
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-success">
