@@ -8,29 +8,21 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>NIM</th>
+                        <th>NISN</th>
                         <th>Nama</th>
-                        <th>Alamat</th>
+                        <th>Tanggal-lahir</th>
                         <th>Jenis Kelamin</th>
-                        <th>Prodi</th>
-                        <th>Jurusan</th>
-                        <th>Kelas</th>
-                        <th>Prodi</th>
-                        <th>Angkatan</th>
                         <th>Action</th>
+                    
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($siswa_list as $s)
                         <tr>
-                            <td>{{$s -> nim}}</td>
-                            <td>{{$s -> nama}}</td>
-                            <td>{{$s -> alamat}}</td>
+                            <td>{{$s -> nisn}}</td>
+                            <td>{{$s -> nama_siswa}}</td>
+                            <td>{{$s -> tgl_lahir->format('d-F-Y')}}</td>
                             <td>{{$s -> jenis_kelamin}}</td>
-                            <td>{{$s -> prodi}}</td>
-                            <td>{{$s -> jurusan}}</td>
-                            <td>{{$s -> kelas}}</td>
-                            <td>{{$s -> angkatan}}</td>
 
                             <td>
                                 <a href="/siswa/{{$s->id}}" class="btn btn-info">Detail</a>

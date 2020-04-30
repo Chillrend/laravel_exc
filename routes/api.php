@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/test_col', 'ApiController@test');
+Route::get('/uts_siswa/date_test', 'ApiController@dateMutatorTest');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

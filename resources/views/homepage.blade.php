@@ -7,7 +7,9 @@
     <a href="/contact">contact bro</a><br />
     <a href="/laravel">laravel</a><br />
     <a href="/halaman">apa ini</a><br />
-
+    <div>
+        {{ phpinfo() }}
+    </div>
 </div>
 
 
