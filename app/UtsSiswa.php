@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Hobby;
 
 class UtsSiswa extends Model
 {
@@ -16,5 +17,10 @@ class UtsSiswa extends Model
 
     public function setNamaAttribute($value){
         $this->attributes['nama'] = strtolower($value);
+    }
+
+    public function hobby()
+    {
+        return $this -> belongsToMany(Hobby::class, 'siswas_hobbies', 'siswa_id', 'hobby_id')->withTimestamps();
     }
 }

@@ -38,6 +38,20 @@
                     <th>Angkatan</th>
                     <td>{{$show->angkatan}}</td>
                 </tr>
+                <tr>
+                    <th>Hobby</th>
+                    <td>
+                        @foreach($show->hobby as $h)
+                            @if($loop->last)
+                                <span> {{$h->hobby_name}}.</span>
+                            @elseif($loop->first)
+                                <span>{{$h->hobby_name}},</span>
+                            @else
+                                <span> {{$h->hobby_name}},</span>
+                            @endif
+                        @endforeach
+                    </td>
+                </tr>
             </table>
         @endif
     </main>

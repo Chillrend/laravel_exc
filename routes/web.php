@@ -24,9 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get('/uts_siswa', [UTSSiswaController::class, 'index']);
-Route::get('/uts_siswa/add', function (){
-    return view("utssiswa.add");
-});
+Route::get('/uts_siswa/add', [UTSSiswaController::class, 'create']);
 Route::post('/uts_siswa', [UTSSiswaController::class, 'store']);
 Route::get('/uts_siswa/{id}', [UTSSiswaController::class, 'show']);
 Route::get('/uts_siswa/edit/{id}', [UTSSiswaController::class, 'edit_views']);

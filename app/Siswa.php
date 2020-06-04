@@ -15,4 +15,6 @@ class Siswa extends Model
     public function getTglLahirAttribute($value){
         return Carbon::parse($value);
     }
+
+    
 }

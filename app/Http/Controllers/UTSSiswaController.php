@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Hobby;
 use App\UtsSiswa;
 use Illuminate\Http\Request;
+
 
 class UTSSiswaController extends Controller
 {
@@ -15,9 +17,22 @@ class UTSSiswaController extends Controller
         return view('utssiswa.index', compact('page', 'siswa_list', 'count'));
     }
 
+    public function create()
+    {
+        $hobbies = Hobby::pluck('hobby_name', 'id');
+        return view('utssiswa.add', compact('hobbies', 'hobbies'));
+    }
+
     public function store(Request $request){
-        $input = $request -> all();
-        UtsSiswa::create($input);
+        // $input = $request -> validate([
+        //     'nim' => 'required|integer|size:5|unique:uts_siswas,nim',
+        //     'nama' => ['required', 'string', 'max:30'],
+        //     'angkatan' => ['required', 'integer', 'min:2015', 'max:2020']
+        // ]);
+
+        $input = $request->input();
+        $uts_siswas = UtsSiswa::create($input);
+        $uts_siswas->hobby()->attach($request->input('hobby'));
 
         return redirect('/uts_siswa');
     }
