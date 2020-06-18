@@ -5,7 +5,7 @@
     <h2>Tambah siswa</h2>
 
     <div class="col-lg-8">
-        <form action="{{url('uts_siswa')}}" method="POST">
+        <form action="{{url('uts_siswa')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="nim">NIM</label>
@@ -81,6 +81,11 @@
                     </div>
                     @endforeach
                 </fieldset>
+            </div>
+
+            <div class="form-group">
+                <label for="pfp">Profile Photo</label>
+                <input type="file" class="form-control-file" id="pfp" name="pfp" accept="image/*">
             </div>
 
             <div class="form-group">

@@ -25,14 +25,28 @@ class UTSSiswaController extends Controller
 
     public function store(Request $request){
         // $input = $request -> validate([
-        //     'nim' => 'required|integer|size:5|unique:uts_siswas,nim',
+        //     'nim' => ['required', 'integer', 'max:5'],
         //     'nama' => ['required', 'string', 'max:30'],
-        //     'angkatan' => ['required', 'integer', 'min:2015', 'max:2020']
+        //     'angkatan' => ['required', 'integer', 'min:2015', 'max:2020'],
+        //     'pfp' => ['sometimes', 'nullable', 'image', 'mimes:jpeg,jpg,png,webp,gif','max:500']
         // ]);
 
         $input = $request->input();
+        var_dump($request->file('pfp'));
+        if($request->hasFile('pfp')){
+            $pfp = $request->file('pfp');
+            $orig = $pfp->getClientOriginalExtension();
+            if($request->file('pfp')->isValid()){
+                $pfpname = date('YmdHis'). ".$orig";
+                $path = 'pfp';
+                $request->file('pfp')->move($path, $pfpname);
+                $input['pfp'] = $pfpname;
+            }
+        }
+
         $uts_siswas = UtsSiswa::create($input);
         $uts_siswas->hobby()->attach($request->input('hobby'));
+
 
         return redirect('/uts_siswa');
     }

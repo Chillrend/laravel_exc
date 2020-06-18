@@ -23,7 +23,7 @@ class CreateUtsSiswasTable extends Migration
             $table->string('jurusan');
             $table->string('kelas');
             $table->string('angkatan');
-
+            $table->string('pfp')->nullable();
             $table->timestamps();
         });
     }

@@ -52,6 +52,16 @@
                         @endforeach
                     </td>
                 </tr>
+                <tr>
+                    <th>Picture</th>
+                    <td>
+                        @if(isset($show->pfp))
+                            <img src="{{asset('pfp/' . $show->pfp)}}" alt="Profile">
+                        @else
+                            No picture
+                        @endif
+                    </td>
+                </tr>
             </table>
         @endif
     </main>

@@ -42,6 +42,10 @@ return [
     */
 
     'disks' => [
+        'pfp' => [
+            'driver' => 'local',
+            'root' => storage_path('pfp')
+        ],
 
         'local' => [
             'driver' => 'local',

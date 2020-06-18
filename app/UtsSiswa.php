@@ -9,7 +9,7 @@ class UtsSiswa extends Model
 {
     protected $table = "uts_siswas";
 
-    protected $fillable = ['nim', 'nama','alamat', 'jenis_kelamin', 'prodi', 'jurusan', 'kelas', 'angkatan'];
+    protected $fillable = ['nim', 'nama','alamat', 'jenis_kelamin', 'prodi', 'jurusan', 'kelas', 'angkatan', 'pfp'];
 
     public function getNamaAttribute($value){
         return ucwords($value);
